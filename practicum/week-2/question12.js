@@ -42,5 +42,17 @@ for (let partition of allPartitions("aba")) {
 }
 
 var maxBalanceNumber = function(input) {
-
+  var numPart = 0;
+  for(let partition of allPartitions(input)){
+  	var numPartTemp = 0;
+  	for(var subString of partition){
+    	if((subString.match(/a/g) || []).length == (subString.match(/b/g) || []).length){
+      	numPartTemp += 1;
+      }
+    }
+    if(numPartTemp > numPart){
+    	numPart = numPartTemp;
+    }
+  }
+  return numPart;
 };
