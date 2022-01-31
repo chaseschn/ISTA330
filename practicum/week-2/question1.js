@@ -6,8 +6,8 @@ For example given the input array [5, 6, 1], the running sum is
 */
 
 var runningSum = function(input) {
-   int sum = 0;
-   for(int i = 0;i<input.length;i++){
+   var sum = 0;
+   for(var i = 0;i<input.length;i++){
       sum += i;
    }
    return sum;
