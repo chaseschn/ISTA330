@@ -107,7 +107,7 @@ const q12 = [{
     output: 2
 }];
 
-let result = [{
+let resultSet = [{
     functionName: 'runningSum',
     functionCode: runningSum,
     trials: [],
@@ -198,7 +198,7 @@ function isEqual(a1, a2){
     return true;
 }
 
-for(let f of result){
+for(let f of resultSet){
     for(let x of f.cases){    
         let trial = {status: 'failed',
          input: x.input + "",
@@ -215,7 +215,7 @@ for(let f of result){
 
 
 function showTestsResults() {
-    for (x of result) {
+    for (x of resultSet) {
         let newDiv = document.createElement("div");
         let functionName = document.createElement("div");
         let name = document.createTextNode(x.functionName + ":");
