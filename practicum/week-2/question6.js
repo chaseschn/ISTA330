@@ -12,8 +12,7 @@ var median = function(input) {
     var  mid1 = mid/2;
     var ar = (midsort[mid1] + midsort[mid1-1])/2;
     return ar;
-   }
-   else{
+   }else{
      var mid1 = Math.floor(mid/2)
      return midsort[mid1];
    }
