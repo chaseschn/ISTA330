@@ -13,5 +13,26 @@ so there are two groups with the largest size.
 */
 
 var largestGroupsCount = function(n) {
+    let cat = [0,0,0,0,0,0,0,0,0,0]
+    for (var i = 1; i <= n; i++) {
+        if (i < 10) {
+            cat[i - 1] = 1;
+        } else {
+            cat[(((i - (i % 10)) / 10) + (i % 10)) - 1] += 1;
 
+        }
+    }
+    var most = cat[0];
+    for (var j = 0; j < cat.length; j++) {
+        if (cat[j] > most) {
+            most = cat[j];
+        }
+    }
+    var count = 0;
+    for (var j = 0; j < cat.length; j++) {
+        if (cat[j] == most) {
+            count++;
+        }
+    }
+    return count;
 };
