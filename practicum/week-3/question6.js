@@ -12,5 +12,16 @@ output: 2
 */
 
 var m_element = function(input) {
-
+    for (var i = 0; i < input.length; i++) {
+        var reps = Math.floor(input.length / 2)
+        for (var j = 0; j < input.length; j++) {
+            if (input[j] == input[i]) {
+                reps -= 1;
+            }
+        }
+        if (reps <= 0) {
+            return input[i];
+        }
+    }
+    return -1;
 };
