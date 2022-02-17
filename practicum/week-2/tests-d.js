@@ -1,43 +1,43 @@
 
 const q1 = [{
-    input: [[5, 6, 0]],
-    output: [5, 11, 11]
+    input: [[5, 6, 1]],
+    output: [5, 11, 12]
 },
 {
-    input: [[42, -3, -39]],
-    output: [42, 39, 0]
+    input: [[43, -3, -39]],
+    output: [43, 40, 1]
 }];
 
 const q2 = [{
-    input: [[5, 6, 1], 5],
-    output: false
+    input: [[5, 6, 1], 6],
+    output: true
 },
 {
-    input: [[3, 5, 2], 8],
-    output: true
+    input: [[3, 5, 2], 6],
+    output: false
 }];
 
 const q3 = [{
-    input: [[5, 6, 7]],
-    output: 3
+    input: [[5, 6, 1]],
+    output: 1
 },
 {
-    input: [[3, 2, 1, 0]],
-    output: 0
+    input: [[3, 5, 2, 8]],
+    output: 4
 }];
 
 const q4 = [{
-    input: ['asDf', 'dsssaaF'],
-    output: 5
+    input: ['asDf', 'dsssaaFa'],
+    output: 6
 },
 {
-    input: ['tek', 'TTTERk'],
-    output: 1
+    input: ['te', 'TTTER'],
+    output: 0
 }];
 
 const q5 = [{
-    input: [13],
-    output: 4
+    input: [12],
+    output: 3
 },
 {
     input: [19],
@@ -45,17 +45,17 @@ const q5 = [{
 }];
 
 const q6 = [{
-    input: [[1, 2, 2, 8, 5, 7, 9 ]],
-    output: 5
+    input: [[1, 2, 2, 3, 4, 7, 9 ]],
+    output: 3
 },
 {
-    input: [[1, 2, 3, 4, 6, 6, 7, 8]],
-    output: 5
+    input: [[1, 2, 3, 4, 5, 6, 7, 8]],
+    output: 4.5
 }];
 
 const q7 = [{
-    input: [[4, 3, 8, 1]],
-    output: 5
+    input: [[4, 3, 8, 0]],
+    output: 4
 },
 {
     input: [[1, 3, 4, 2, 6, 8, 5, 7]],
@@ -63,8 +63,8 @@ const q7 = [{
 }];
 
 const q8 = [{
-    input: [[23, 44, 12, 24]],
-    output: [2, 0, 2, 1]
+    input: [[23, 44, 12, 4]],
+    output: [1, 0, 1, 2]
 },
 {
     input: [[1, 3, 4, 2, 6, 8, 5, 7]],
@@ -72,8 +72,8 @@ const q8 = [{
 }];
 
 const q9 = [{
-    input: ['singgreet', [8, 5, 6, 0, 7, 1, 2, 3, 4]],
-    output: 'greetings'
+    input: ['llheo', [2, 3, 0, 1, 4]],
+    output: 'hello'
 },
 {
     input: ['emelwco', [1, 5, 6, 2, 0, 3, 4]],
@@ -81,8 +81,8 @@ const q9 = [{
 }];
 
 const q10 = [{
-    input: [4729],
-    output: 7
+    input: [472],
+    output: 5
 },
 {
     input: [87034],
@@ -90,8 +90,8 @@ const q10 = [{
 }];
 
 const q11 = [{
-    input: [[2, 5, 5, 2]],
-    output: [5, 5, 2, 2, 2, 2, 2]
+    input: [[2, 5, 4, 2]],
+    output: [5, 5, 2, 2, 2, 2]
 },
 {
     input: [[0, 8, 1, 3, 2, 7]],
@@ -103,11 +103,11 @@ const q12 = [{
     output: 4
 },
 {
-    input: ['aaababbba'],
-    output: 3
+    input: ['aaababbb'],
+    output: 2
 }];
 
-let result = [{
+let resultSet = [{
     functionName: 'runningSum',
     functionCode: runningSum,
     trials: [],
@@ -198,7 +198,7 @@ function isEqual(a1, a2){
     return true;
 }
 
-for(let f of result){
+for(let f of resultSet){
     for(let x of f.cases){    
         let trial = {status: 'failed',
          input: x.input + "",
@@ -215,7 +215,7 @@ for(let f of result){
 
 
 function showTestsResults() {
-    for (x of result) {
+    for (x of resultSet) {
         let newDiv = document.createElement("div");
         let functionName = document.createElement("div");
         let name = document.createTextNode(x.functionName + ":");
