@@ -6,6 +6,13 @@
     <title>Document</title>
 </head>
 <body>
+<style>
+figure{
+  display: inline-block;
+  text.align: center;
+}
+</style>
+
     <div id="question">
         Using the array flowers below, 
         display the flowers. Use the div 'flowersDiv'.
@@ -15,14 +22,42 @@
         and under the image display its name.Your webpage should be responsive.
     </div>
     <div id='flowersDiv'>
-        <table>
-            <tr>
-                <th id="flower1"></th>
-            </tr>
-
-
-        </table>
-
+    <table>
+    
+  
+            <figure>
+            <img id="image1" src=''>
+            <figcaption id="flower1">Caption goes here</figcaption>
+            </figure>
+            <figure>
+            <img id="image2" src=''>
+            <figcaption id="flower2">Caption goes here</figcaption>
+            </figure>
+            <figure>
+            <img id="image3" src=''>
+            <figcaption id="flower3">Caption goes here</figcaption>
+            </figure>
+            <figure>
+            <img id="image4" src=''>
+            <figcaption id="flower4">Caption goes here</figcaption>
+            </figure>
+            <figure>
+            <img id="image5" src=''>
+            <figcaption id="flower5">Caption goes here</figcaption>
+            </figure>
+            <figure>
+            <img id="image6" src=''>
+            <figcaption id="flower6">Caption goes here</figcaption>
+            </figure>
+             <figure>
+            <img id="image7" src=''>
+            <figcaption id="flower7">Caption goes here</figcaption>
+            </figure>
+             <figure>
+            <img id="image8" src=''>
+            <figcaption id="flower8">Caption goes here</figcaption>
+            </figure>
+  </table>
     </div>
     <script>
         /*
@@ -37,7 +72,12 @@
            constructor(name, pictureName) {
                this.name = name;
                this.picture = pictureName;
-               document.getElementById("flower1")
+           }
+           nam(){
+               return this.name;
+           }
+           pic(){
+               return this.picture;
            }
        }
        let daffodil = new Flower('Daffodil', 'https://habahram.blob.core.windows.net/flowers/daffodil.jpg');
@@ -59,7 +99,38 @@
              rose,
              waterlily
        ];
-       document.getElementById("flower1").innerHTML = flowers;
+       
+       document.getElementById("flower1").innerHTML = flowers[0].nam();
+       document.getElementById("image1").src = flowers[0].pic();
+       
+
+       document.getElementById("flower2").innerHTML = flowers[1].nam();
+       document.getElementById("image2").src = flowers[1].pic();
+       
+
+       document.getElementById("flower3").innerHTML = flowers[2].nam();
+       document.getElementById("image3").src = flowers[2].pic();
+       
+
+       document.getElementById("flower4").innerHTML = flowers[3].nam();
+       document.getElementById("image4").src = flowers[3].pic();
+       
+
+       document.getElementById("flower5").innerHTML = flowers[4].nam();
+       document.getElementById("image5").src = flowers[4].pic();
+       
+
+       document.getElementById("flower6").innerHTML = flowers[5].nam();
+       document.getElementById("image6").src = flowers[5].pic();
+       
+
+       document.getElementById("flower7").innerHTML = flowers[6].nam();
+       document.getElementById("image7").src = flowers[6].pic();
+       
+
+       document.getElementById("flower8").innerHTML = flowers[7].nam();
+       document.getElementById("image8").src = flowers[7].pic();
+       
     </script>
 </body>
 </html>
