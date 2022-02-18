@@ -9,5 +9,14 @@ Given n, calculate F(n).
 */
 
 var F = function(n) {
+    var num1 = 0;
+    var num2 = 1;
 
+    while (n > 0) {
+        var temp = num2;
+        num2 += num1;
+        num1 = temp;
+        n -= 1;
+    }
+    return num1;
 };

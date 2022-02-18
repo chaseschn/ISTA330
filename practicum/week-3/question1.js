@@ -10,5 +10,18 @@ is at least twice as much as every other number
 */
 
 var largestNumberIsAtLeastTwice = function(input) {
-   
+    var max = -99;
+    var maxIndex = 0;
+    for (var i = 0; i < input.length; i++) {
+        if (input[i] > max) {
+            max = input[i];
+            maxIndex = i;
+        }
+    }
+    for (var i = 0; i < input.length; i++) {
+        if (input[i]*2 > max && i != maxIndex) {
+            return false;
+        }
+    }
+    return true;
 };

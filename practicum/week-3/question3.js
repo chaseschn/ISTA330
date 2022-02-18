@@ -12,6 +12,17 @@ output: [
 ]
 */
 
-var PascalTriangle = function(n) {
-
+var PascalTriangle = function (n) {
+    let newArr = []
+    for (var i = 0; i < n; i++) {
+        var row = [1];
+        for (var j = 1; j < i; j++) {
+            row.push(newArr[i - 1][j - 1] + newArr[i - 1][j]);
+        }
+        if (i > 0) {
+            row.push(1);
+        }
+        newArr[i] = row;
+    }
+    return newArr
 };
