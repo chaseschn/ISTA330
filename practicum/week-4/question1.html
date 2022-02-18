@@ -15,6 +15,13 @@
         and under the image display its name.Your webpage should be responsive.
     </div>
     <div id='flowersDiv'>
+        <table>
+            <tr>
+                <th id="flower1"></th>
+            </tr>
+
+
+        </table>
 
     </div>
     <script>
@@ -30,6 +37,7 @@
            constructor(name, pictureName) {
                this.name = name;
                this.picture = pictureName;
+               document.getElementById("flower1")
            }
        }
        let daffodil = new Flower('Daffodil', 'https://habahram.blob.core.windows.net/flowers/daffodil.jpg');
@@ -51,6 +59,7 @@
              rose,
              waterlily
        ];
+       document.getElementById("flower1").innerHTML = flowers;
     </script>
 </body>
 </html>
