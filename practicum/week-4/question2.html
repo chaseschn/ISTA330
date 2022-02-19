@@ -25,30 +25,54 @@
         <table>
             <tr>
                 <td>
-                    lily
+                    <figure>
+                        <img id="image1" src='' onclick="sortArray(0)">
+                        <figcaption id="flower1">Caption goes here</figcaption>
+                    </figure>
                 </td>
                 <td>
-                    rose
+                    <figure>
+                        <img id="image2" src='' onclick="sortArray(1)">
+                        <figcaption id="flower2">Caption goes here</figcaption>
+                    </figure>
                 </td>
                 <td>
-                    sunflower
+                    <figure>
+                        <img id="image3" src='' onclick="sortArray(2)">
+                        <figcaption id="flower3">Caption goes here</figcaption>
+                    </figure>
                 </td>
                 <td>
-                    tulip
+                    <figure>
+                        <img id="image4" src='' onclick="sortArray(3)">
+                        <figcaption id="flower4">Caption goes here</figcaption>
+                    </figure>
                 </td>
             </tr>
             <tr>
                 <td>
-                    water lily
+                    <figure>
+                        <img id="image5" src='' onclick="sortArray(4)">
+                        <figcaption id="flower5">Caption goes here</figcaption>
+                    </figure>
                 </td>
                 <td>
-                    cherry blossom
+                    <figure>
+                        <img id="image6" src='' onclick="sortArray(5)">
+                        <figcaption id="flower6">Caption goes here</figcaption>
+                    </figure>
                 </td>
                 <td>
-                    daffodil
+                    <figure>
+                        <img id="image7" src='' onclick="sortArray(6)">
+                        <figcaption id="flower7">Caption goes here</figcaption>
+                    </figure>
                 </td>
                 <td>
-                    daisy
+                    <figure>
+                        <img id="image8" src='' onclick="sortArray(7)">
+                        <figcaption id="flower8">Caption goes here</figcaption>
+                    </figure>
                 </td>
             </tr>
         </table>
@@ -80,7 +104,14 @@
                 this.name = name;
                 this.picture = pictureName;
             }
+            nam() {
+                return this.name;
+            }
+            pic() {
+                return this.picture;
+            }
         }
+
         let daffodil = new Flower('Daffodil', 'https://habahram.blob.core.windows.net/flowers/daffodil.jpg');
         let cherryblossom = new Flower('Cherry blossom', 'https://habahram.blob.core.windows.net/flowers/cherryblossom.jpg');
         let lily = new Flower('Lily', 'https://habahram.blob.core.windows.net/flowers/lily.jpg');
@@ -91,15 +122,69 @@
         let waterlily = new Flower('Water lily', 'https://habahram.blob.core.windows.net/flowers/waterlily.jpg');
 
         let flowers = [
-            daffodil,
             cherryblossom,
-            lily,
+            daffodil,
             daisy,
+            lily,
+            rose,
             sunflower,
             tulip,
-            rose,
             waterlily
         ];
+
+        function sortArray(index) {
+            if (index == 0) {
+                flowers = [cherryblossom, daffodil, daisy, lily, rose, sunflower, tulip, waterlily];
+            } else if (index == 1) {
+                flowers = [daffodil, daisy, lily, rose, sunflower, tulip, waterlily, cherryblossom];
+            } else if (index == 2) {
+                flowers = [daisy, lily, rose, sunflower, tulip, waterlily, cherryblossom, daffodil];
+            } else if (index == 3) {
+                flowers = [lily, rose, sunflower, tulip, waterlily, cherryblossom, daffodil, daisy];
+            } else if (index == 4) {
+                flowers = [rose, sunflower, tulip, waterlily, cherryblossom, daffodil, daisy, lily];
+            } else if (index == 5) {
+                flowers = [sunflower, tulip, waterlily, cherryblossom, daffodil, daisy, lily, rose];
+            } else if (index == 6) {
+                flowers = [tulip, waterlily, cherryblossom, daffodil, daisy, lily, rose, sunflower];
+            } else if (index == 7) {
+                flowers = [waterlily, cherryblossom, daffodil, daisy, lily, rose, sunflower, tulip];
+            }
+
+            document.getElementById("flower1").innerHTML = flowers[0].nam();
+            document.getElementById("image1").src = flowers[0].pic();
+
+
+            document.getElementById("flower2").innerHTML = flowers[1].nam();
+            document.getElementById("image2").src = flowers[1].pic();
+
+
+            document.getElementById("flower3").innerHTML = flowers[2].nam();
+            document.getElementById("image3").src = flowers[2].pic();
+
+
+            document.getElementById("flower4").innerHTML = flowers[3].nam();
+            document.getElementById("image4").src = flowers[3].pic();
+
+
+            document.getElementById("flower5").innerHTML = flowers[4].nam();
+            document.getElementById("image5").src = flowers[4].pic();
+
+
+            document.getElementById("flower6").innerHTML = flowers[5].nam();
+            document.getElementById("image6").src = flowers[5].pic();
+
+
+            document.getElementById("flower7").innerHTML = flowers[6].nam();
+            document.getElementById("image7").src = flowers[6].pic();
+
+
+            document.getElementById("flower8").innerHTML = flowers[7].nam();
+            document.getElementById("image8").src = flowers[7].pic();
+
+        }
+        sortArray(0);
+
     </script>
 </body>
 
