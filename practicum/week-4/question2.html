@@ -131,25 +131,36 @@
             tulip,
             waterlily
         ];
-
+        let displace = 0;
         function sortArray(index) {
+            console.log(index);
+            index = (index + displace) % 8;
             if (index == 0) {
+                displace += 0;
                 flowers = [cherryblossom, daffodil, daisy, lily, rose, sunflower, tulip, waterlily];
             } else if (index == 1) {
+                displace = 1;
                 flowers = [daffodil, daisy, lily, rose, sunflower, tulip, waterlily, cherryblossom];
             } else if (index == 2) {
+                displace = 2;
                 flowers = [daisy, lily, rose, sunflower, tulip, waterlily, cherryblossom, daffodil];
             } else if (index == 3) {
+                displace = 3;
                 flowers = [lily, rose, sunflower, tulip, waterlily, cherryblossom, daffodil, daisy];
             } else if (index == 4) {
+                displace = 4;
                 flowers = [rose, sunflower, tulip, waterlily, cherryblossom, daffodil, daisy, lily];
             } else if (index == 5) {
+                displace = 5;
                 flowers = [sunflower, tulip, waterlily, cherryblossom, daffodil, daisy, lily, rose];
             } else if (index == 6) {
+                displace = 6;
                 flowers = [tulip, waterlily, cherryblossom, daffodil, daisy, lily, rose, sunflower];
             } else if (index == 7) {
+                displace = 7;
                 flowers = [waterlily, cherryblossom, daffodil, daisy, lily, rose, sunflower, tulip];
             }
+            displace = displace % 8;
 
             document.getElementById("flower1").innerHTML = flowers[0].nam();
             document.getElementById("image1").src = flowers[0].pic();
