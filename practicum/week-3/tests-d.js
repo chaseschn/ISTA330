@@ -1,65 +1,63 @@
 // largestNumberIsAtLeastTwice
 const q1 = [{
-    input: [[3, 2, 26, 50]],
-    output: false
+    input: [[3,2,21,50]],
+    output: true
 },
 {
-    input: [[3, 2, 1, 57]],
-    output: true
+    input: [[3,2,1,5]],
+    output: false
 }];
 // largestSubarray
 const q2 = [{
-    input: [[-12, 3, -1, 5, 2, -1, -7]],
-    output: 9
+    input: [[-12,3,-1,5,-2,1,-7]],
+    output: 7
 },
 {
-    input: [[-17, 3, 1, 5, -9, -1, 10]],
+    input: [[-17,3,1,5,-9,-1,10]],
     output: 10
 }];
 // PascalTriangle
 const q3 = [{
-    input: [6],
+    input: [4],
     output: [
         [1],
-        [1, 1],
-        [1, 2, 1],
-        [1, 3, 3, 1],
-        [1, 4, 6, 4, 1],
-        [1, 5, 10, 10, 5, 1]
-    ]
+       [1,1],
+      [1,2,1],
+     [1,3,3,1] 
+   ]
 },
 {
     input: [5],
     output: [
         [1],
-        [1, 1],
-        [1, 2, 1],
-        [1, 3, 3, 1],
-        [1, 4, 6, 4, 1]
-    ]
+       [1,1],
+      [1,2,1],
+     [1,3,3,1],
+    [1,4,6,4,1]
+   ]
 }];
 //hasDuplicates
 const q4 = [{
-    input: [[19, 18, 17, 23, 24, 4, 3, 26, 1, 2]],
-    output: false
+    input: [[19,1,1,23,23,4,3,23,1,2]],
+    output: true
 },
 {
-    input: [[3, 5, 90, 21, 3]],
-    output: true
+    input: [[3,5,90,21]],
+    output: false
 }];
 //isMonotonic
 const q5 = [{
-    input: [[12, 6, 2, 2, 2, 3]],
-    output: false
+    input: [[12, 6, 2, 2, 2, 0]],
+    output: true
 },
 {
-    input: [[29, 61, 310, 2500, 231000]],
-    output: true
+    input: [[29, 6, 31, 2, 23, 40]],
+    output: false
 }];
 // m_element
 const q6 = [{
-    input: [[1, 3, 2, 3, 3, 7, 3]],
-    output: 3
+    input: [[1, 2, 2, 3, 2, 7, 2]],
+    output: 2
 },
 {
     input: [[1, 2, 3, 4, 5, 6, 7, 8]],
@@ -67,26 +65,26 @@ const q6 = [{
 }];
 //transpose
 const q7 = [{
-    input: [[[1, 2, 3], [7, 5, 6]]],
-    output: [[1, 7], [2, 5], [3, 6]]
+    input: [[[1,2,3],[4,5,6]]],
+    output: [[1,4], [2,5], [3,6]]
 },
 {
-    input: [[[1, 4], [2, 5], [3, 6]]],
-    output: [[1, 2, 3], [4, 5, 6]]
+    input: [[[1,4], [2,5], [3,6]]],
+    output: [[1,2,3],[4,5,6]]
 }];
 //d_integer
 const q8 = [{
-    input: [[3, 5, 3, 4, 4, 3, 5, 1, 4, 4]],
-    output: 4
+    input: [[3,5,3,3,5,1]],
+    output: 3
 },
 {
-    input: [[3, 6, 3, 9, 6, 45, 86, 9]],
+    input: [[3,5,3,9,6,45,86,9]],
     output: -1
 }];
 //largestGroupsCount
 const q9 = [{
-    input: [12],
-    output: 3
+    input: [11],
+    output: 2
 },
 {
     input: [24],
@@ -94,27 +92,27 @@ const q9 = [{
 }];
 //minPairs
 const q10 = [{
-    input: [[1, -5, -10, 24, 19, -4, -14, 23]],
+    input: [[1,-5,-10,24,19,-4,-14,23]],
     output: [[-5, -4], [23, 24]]
 },
 {
-    input: [[17, -5, -1, 24, 29, 54, 1, 27, 19]],
-    output: [[-1, 1], [17, 19], [27, 29]]
+    input: [[17,-5,-1,24,29,54,1]],
+    output: [[-1, 1]]
 }];
 //d-count
 const q11 = [{
-    input: [[2, 1, 26, 3], [-5, -2, 10, -3, 7], 6],
+    input: [[2,1,26,3], [-5,-2,10,-3,7], 6],
     output: 1
 },
 {
-    input: [[2, 100, 37, 39], [4, 8, 10, 0, -14], 10],
-    output: 3
+    input: [[2,100,37,3], [4,8,10,0,-14], 10],
+    output: 2
 }];
 
 //fibonacci
 const q12 = [{
-    input: [10],
-    output: 55
+    input: [9],
+    output: 34
 },
 {
     input: [30],
@@ -195,35 +193,33 @@ let result = [{
 }
 ];
 
-function isEqual(a1, a2) {
-    const t = typeof (a1);
-    if ((t === 'boolean') || (t === 'number') || (t === 'string')) {
+function isEqual(a1, a2){
+    const t = typeof(a1);
+    if((t === 'boolean') || (t === 'number') || (t === 'string')){
         return a1 === a2;
     }
-
-    if (!a1 || !a2 || a1.length !== a2.length) {
+    
+    if(!a1 || !a2 || a1.length !== a2.length) {
         return false;
     }
-    for (let i = 0; i < a1.length; i++) {
-        if (!isEqual(a1[i], a2[i])) {
+    for(let i = 0; i < a1.length; i++) {
+        if(!isEqual(a1[i], a2[i])) {
             return false;
         }
     }
     return true;
 }
 
-for (let f of result) {
-    for (let x of f.cases) {
-        let trial = {
-            status: 'failed',
-            input: x.input,
-            expected: JSON.stringify(x.output),
-            output: undefined
-        };
+for(let f of result){
+    for(let x of f.cases){
+        let trial = {status: 'failed',
+         input: x.input,
+        expected: x.output, 
+        output: undefined};
         trial.output = f.functionCode(...x.input);
-
-        if (isEqual(x.output, trial.output)) {
-            trial.status = 'success';
+        
+        if(isEqual(x.output, trial.output)) {
+            trial.status = 'success'
         }
         if(trial.input.length === 1) {
             trial.input = JSON.stringify(...trial.input);
@@ -247,7 +243,7 @@ function showTestsResults() {
         newDiv.className = 'functionDiv';
         newDiv.appendChild(functionName);
         let ol = document.createElement('ol');
-        for (y of x.trials) {
+        for(y of x.trials) {
             let li = document.createElement('li');
             let content = document.createTextNode(`${y.status}`);
             li.appendChild(content);
@@ -263,11 +259,11 @@ function showTestsResults() {
             li.appendChild(br3);
             let expected = document.createTextNode(`expected: ${y.expected}`);
             li.appendChild(expected);
-            if (y.status === 'failed') {
+            if(y.status === 'failed') {
                 li.className = 'failed';
             } else {
                 li.className = 'success';
-            }
+            }                                       
             ol.appendChild(li);
         }
         newDiv.appendChild(ol);
