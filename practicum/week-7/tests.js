@@ -7,7 +7,7 @@ window.onload = () => {
     console.log(username);
     let names = ['Fred', 'John', 'Philip', 'Pablo', 'Toby', 'Rio'];
     let random = Math.floor(Math.random() * names.length);
-    let api = `https://${username}-imagequiz-backend.herokuapp.com`;
+    let api = `https://${username}-imagequiz-api.herokuapp.com`;
     //let api = `http://localhost:4002`;
     let testTaker = names[random];
     let testTakerEmail = testTaker + '@gmail.com';
@@ -17,11 +17,10 @@ window.onload = () => {
     testDiv.innerHTML += `<h2>****************************************************************************************</h2>`;
     testDiv.innerHTML += `<h2>Testing the API at ${api} ...</h2>`;
     fetch(`${api}/flowers`).then(x => x.json()).
-        then(x => testDiv.innerHTML += `<h2>There are ${x.length} flowers in the database.</h2>`)
+        then(x => testDiv.innerHTML += 
+            `<h2>Done:${x.done}.There are ${x.result.length} flowers in the database.${x.message ? x.message : ''}</h2>`)
         .catch(e => testDiv.innerHTML += `<h2>Error in /flowers method: ${e}</h2>`);
-    fetch(`${api}/quizzes`).then(x => x.json()).
-        then(x => testDiv.innerHTML += `<h2>There are ${x.length} quizzes in the database.</h2>`)
-        .catch(e => testDiv.innerHTML += `<h2>Error in /quizzes method: ${e}</h2>`);
+    
     fetch(`${api}/register`, {
         method: 'POST',
         headers: {
@@ -55,13 +54,13 @@ window.onload = () => {
             })
         }))
         .then(x => x.json())
-        .then(x => testDiv.innerHTML += (x.isvalid ? `<h2>The test taker ${testTakerEmail} logged in successfully.</h2>` :
+        .then(x => testDiv.innerHTML += (x.done ? `<h2>The test taker ${testTakerEmail} logged in successfully.</h2>` :
             `<h2>The provided credentials are invalid.</h2>`))
         .catch(e => testDiv.innerHTML += `<h2>Error in /login method: ${e}</h2>`)
-        .then(() => fetch(`${api}/quizzes`))
+        .then(() => fetch(`${api}/flowers`))
         .then(x => x.json())
         .then(x => {
-            quizId = x[Math.floor(Math.random() * x.length)].id;
+            quizId = x.result[Math.floor(Math.random() * x.result.length)].name;
             return x;
         })
         .then(x => fetch(`${api}/score`, {
@@ -72,16 +71,16 @@ window.onload = () => {
             },
             body: JSON.stringify({
                 quizTaker: testTakerEmail,
-                quizId: quizId,
+                quizName: quizId,
                 score: 5
             })
         }))
         .then(x => x.json())
-        .then(x => testDiv.innerHTML += `<h2>The score for the test taker ${testTakerEmail} for quiz ${quizId} was submitted.</h2>`)
+        .then(x => testDiv.innerHTML += `<h2>Done:${x.done}. The score for the test taker ${testTakerEmail} for quiz ${quizId} was submitted.</h2>`)
         .catch(e => testDiv.innerHTML += `<h2>Error in /score post method: ${e}</h2>`)
         .then(x => fetch(`${api}/scores/${testTakerEmail}/${quizId}`))
         .then(x => x.json())
-        .then(x => testDiv.innerHTML += `<h2>The test taker ${testTakerEmail} has ${x.length} submitted scores for quiz ${quizId}.</h2>`)
+        .then(x => testDiv.innerHTML += `<h2>Done:${x.done}. The test taker ${testTakerEmail} has ${x.result.length} submitted scores for quiz ${quizId}.</h2>`)
         .catch(e => testDiv.innerHTML += `<h2>Error in /scores get method: ${e}</h2>`)
         .then();
     let iframe = document.getElementById('myApplicationFrame');

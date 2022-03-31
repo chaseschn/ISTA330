@@ -30,7 +30,7 @@
                 exists you should return a response with the status code 403.
                 The method should return an object {done, message} where done is boolean and message is a string;
             </li>
-                <li>'/login' - a POST method that determinse whether the provided credentials are valid or not.
+                <li>'/login' - a POST method that determinse whether the provided credentials (email, password) are valid or not.
                     The method should return an object {done, message}.
                 </li>
                 <li>'/flowers' - a GET method returning the list of all the flowers from your flowers.js file.
@@ -40,10 +40,14 @@
                     The method should return an object {done, result, message} where result is an object or it is undefined.
                 </li>
                 <li>'/score' - a POST method storing the score for a quiz taken by a quiz taker.
+                    The method sends an object {quizTaker, quizName, score}.
                     The method should return an object {done, message}.
                 </li>
-                <li>'/scores/:quiztaker/:quizid' - a GET method returning the scores of the specified quiz taker 
-                    for the specified quiz. The method should return an object {done, result, message} where result is a number or it is undefined.</li>
+                <li>'/scores/:quiztaker/:quizname' - a GET method returning the scores of the specified quiz taker 
+                    for the specified quiz. The method should return an object {done, result, message} 
+                    where result is an array 
+                    (A quiz taker can take a quiz several times so we need an array to store all the scores for a given quiz) 
+                    or it is undefined.</li>
                 <li>All your methods in your API should return json objects. </li>
             </ol>
            </li>
