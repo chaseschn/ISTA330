@@ -12,7 +12,7 @@ window.onload = () => {
     let testTaker = names[random];
     let testTakerEmail = testTaker + '@gmail.com';
     let password = '123';
-    let quizId = -1;
+    let quizId = 'daisy';
     let testDiv = document.getElementById('test-the-api');
     testDiv.innerHTML += `<h2>****************************************************************************************</h2>`;
     testDiv.innerHTML += `<h2>Testing the API at ${api} ...</h2>`;
