@@ -20,17 +20,9 @@
          from the imagequiz-backend API.
 
         <ul>
-            <li>First you need to add one more table(to store scores) to the database in the backend. 
-                Table name should be 'score'. The table should have the following columns: 
-                id, customer_id, quiz_id, score, date
-                (customer_id and quiz_id are foregin keys refereing customer and quiz tables respectively).
-            </li>
+           
             <li>
-                Then modify your '/score' method in your imagequiz-backend API so that it saves the score into 
-                the table score you created in the previous step.
-            </li>
-            <li>
-                Then delete the follwoing files from your 
+                Delete the follwoing files from your 
                 front-end: customers.js, data.js, flowers.js and scores.js.  
             </li>           
             <li>
@@ -46,6 +38,12 @@
                 Modify your front-end so that it uses the '/login' method in imagequiz-backend API to authenticate 
                 the user.
             </li>
+            <li>
+                Modify your front-end so that it retrievs the list of the flowers from imagequiz-backend API.
+            </li>  
+            <li>
+                Modify your front-end so that it retrievs the quiz from imagequiz-backend API.
+            </li>  
             <li>
                 Modify your front-end so that it sends the score to the imagequiz-backend API to be saved.
             </li>            
