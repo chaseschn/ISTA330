@@ -14,7 +14,8 @@
 8. [Practicum 8](practicum/week-8/index.html)
 9. [Practicum 9](practicum/week-9/index.html)
 10. [Practicum 10](practicum/week-10/index.html)
-1. [Project 1](projects/project-1/index.html)
+10. [Practicum 10](practicum/week-10/index.html)
+11. [Practicum 11](practicum/week-11/index.html)
 
 
 
